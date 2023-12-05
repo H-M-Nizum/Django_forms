@@ -10,7 +10,7 @@ def about(request):
 
 def form(request):
     if request.method == 'POST':
-        django_form = PracticeForm(request.POST)
+        django_form = PracticeForm(request.POST,  request.FILES)
         if django_form.is_valid():
             data = django_form.cleaned_data
             print(data)

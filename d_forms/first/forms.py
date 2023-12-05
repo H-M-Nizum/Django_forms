@@ -43,6 +43,22 @@ class PracticeForm(forms.Form):
     # DecimalField() - number value inputs
     value = forms.DecimalField()
     
+    # Duration field
+    Duration = forms.DurationField()
+    
+    # File field and img field
+         
+    File = forms.FileField()
+    image = forms.ImageField()
+    
+    # RegexField – Django Forms
+    Regexfield = forms.RegexField(regex = "G.*s")
+    
+    # URLField – Django Forms
+    url_field = forms.URLField( ) 
+    
+    # UUIDField – Django Forms
+    unid_field = forms.UUIDField( ) 
     
     ###############################################
     ################### core Arguments ############
@@ -77,9 +93,13 @@ class PracticeForm(forms.Form):
     
     LANGUAGE = [('p', 'Python'), ('c', 'C'), ('j', 'Java'), ('js', 'Javascript')]
     
-    # 1. ChoiceField() and RadioSelect 
+    # 1. ChoiceField()
     choice_one = forms.ChoiceField(choices=LANGUAGE)
     
+    # 1.1. TypedChoiceField – Django Forms
+    Typedchoicefield = forms.TypedChoiceField(choices=LANGUAGE)
+    
+    # 1.2 RadioSelect 
     choice_one_with_RadioSelect = forms.ChoiceField(widget=forms.RadioSelect, choices=LANGUAGE)
     
     
@@ -87,6 +107,8 @@ class PracticeForm(forms.Form):
     choice_multiple = forms.MultipleChoiceField(choices=LANGUAGE)
     
     choice_multiple_with_CheckboxSelectMultiple = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=LANGUAGE)
+    
+  
      
      
    
